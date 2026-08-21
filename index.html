@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Professional Profile & Portfolio</title>
+  <title>Venkata Duggirala | Professional Profile & Portfolio</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -12,7 +12,7 @@
   <!-- Navigation -->
   <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <span class="font-bold text-xl text-slate-900 tracking-tight">Portfolio</span>
+      <span class="font-bold text-xl text-slate-900 tracking-tight">Venkata Duggirala</span>
       <div class="flex items-center space-x-6 text-sm font-medium text-slate-600">
         <a href="#about" class="hover:text-blue-600 transition">About</a>
         <a href="#achievements" class="hover:text-blue-600 transition">Achievements</a>
@@ -35,7 +35,7 @@
             <!-- Profile Image Element -->
             <img 
               src="profile.jpg" 
-              alt="Profile Photo" 
+              alt="Venkata Duggirala" 
               class="w-full h-full object-cover pointer-events-none select-none"
               draggable="false"
               oncontextmenu="return false;"
@@ -175,11 +175,10 @@
         <p class="mt-2 text-slate-600">Recommendations from engineering partners and colleagues.</p>
       </div>
 
-      <!-- Endorsements Output List -->
+      <!-- Endorsements List Container -->
       <div id="reviewsList" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm">
-          <p class="text-slate-700 italic">"An exceptional engineering leader who combines deep technical acumen with calm, decisive execution."</p>
-          <div class="mt-4 font-semibold text-slate-900 text-sm">— Engineering Director <span class="text-xs font-normal text-slate-500">(Collaborator)</span></div>
+        <div class="text-center col-span-2 text-slate-500 text-sm py-8">
+          Loading endorsements...
         </div>
       </div>
 
@@ -217,62 +216,157 @@
         <p class="mt-2 text-slate-400 text-sm">Hiring managers and collaborators can send a direct message below.</p>
       </div>
 
-      <!-- Formspree Endpoint -->
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+      <!-- Thank You Message Alert -->
+      <div id="contactSuccessMsg" class="hidden mb-6 p-5 bg-emerald-500/20 border border-emerald-500/40 rounded-xl text-center">
+        <svg class="w-8 h-8 text-emerald-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <p class="text-emerald-300 font-semibold text-base">Thank you so much for contacting me.</p>
+        <p class="text-emerald-400 text-sm mt-1">I will get in touch with you shortly.</p>
+      </div>
+
+      <!-- Contact Form -->
+      <form id="contactForm" class="space-y-4">
         <div>
           <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Full Name</label>
-          <input type="text" name="name" required class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:border-blue-500 outline-none" />
+          <input type="text" id="contactName" required class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:border-blue-500 outline-none" />
         </div>
         <div>
           <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Email Address</label>
-          <input type="email" name="email" required class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:border-blue-500 outline-none" />
+          <input type="email" id="contactEmail" required class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:border-blue-500 outline-none" />
         </div>
         <div>
           <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Company / Organization</label>
-          <input type="text" name="company" class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:border-blue-500 outline-none" />
+          <input type="text" id="contactCompany" class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:border-blue-500 outline-none" />
         </div>
         <div>
           <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Message / Opportunity Details</label>
-          <textarea name="message" rows="4" required class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:border-blue-500 outline-none"></textarea>
+          <textarea id="contactMessage" rows="4" required class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:border-blue-500 outline-none"></textarea>
         </div>
-        <button type="submit" class="w-full py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-500 transition">
+        <button type="submit" id="contactSubmitBtn" class="w-full py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-500 transition">
           Send Message
         </button>
       </form>
     </div>
   </section>
 
-  <!-- Client-Side Storage Script for Dynamic Reviews -->
+  <!-- Google Sheets Integration Script -->
   <script>
+    const GOOGLE_SHEET_API_URL = "https://script.google.com/macros/s/AKfycbyCltgVPJO7PqrCHMZrjeSBJOTCJ-Mp2-Zffoy9km9WTb_l4IzqCvl7pWzuynhzkFrD/exec";
+
+    // 1. ENDORSEMENTS SCRIPT
     const reviewForm = document.getElementById('reviewForm');
     const reviewsList = document.getElementById('reviewsList');
 
-    const savedReviews = JSON.parse(localStorage.getItem('peer_reviews') || '[]');
-    savedReviews.forEach(r => appendReviewToDOM(r.name, r.role, r.text));
-
-    reviewForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('reviewerName').value.trim();
-      const role = document.getElementById('reviewerRole').value.trim();
-      const text = document.getElementById('reviewerText').value.trim();
-
-      if (name && text) {
-        appendReviewToDOM(name, role, text);
-        savedReviews.push({ name, role, text });
-        localStorage.setItem('peer_reviews', JSON.stringify(savedReviews));
-        reviewForm.reset();
-      }
-    });
-
-    function appendReviewToDOM(name, role, text) {
+    function renderReview(name, role, text) {
       const card = document.createElement('div');
       card.className = 'bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm';
       card.innerHTML = `
-        <p class="text-slate-700 italic">"${text}"</p>
-        <div class="mt-4 font-semibold text-slate-900 text-sm">— ${name} <span class="text-xs font-normal text-slate-500">(${role})</span></div>
+        <p class="text-slate-700 italic">"${escapeHtml(text)}"</p>
+        <div class="mt-4 font-semibold text-slate-900 text-sm">— ${escapeHtml(name)} <span class="text-xs font-normal text-slate-500">(${escapeHtml(role)})</span></div>
       `;
       reviewsList.prepend(card);
     }
+
+    function escapeHtml(string) {
+      const div = document.createElement('div');
+      div.innerText = string;
+      return div.innerHTML;
+    }
+
+    // Load existing reviews on page load
+    async function loadReviews() {
+      try {
+        const response = await fetch(GOOGLE_SHEET_API_URL);
+        const data = await response.json();
+        reviewsList.innerHTML = "";
+        
+        if (!data || data.length === 0) {
+          reviewsList.innerHTML = `<p class="text-slate-500 text-sm col-span-2 text-center">No endorsements posted yet. Be the first to leave one!</p>`;
+        } else {
+          data.forEach(item => {
+            renderReview(item.name, item.role, item.text);
+          });
+        }
+      } catch (err) {
+        console.error("Error loading reviews:", err);
+        reviewsList.innerHTML = `<p class="text-slate-500 text-sm col-span-2 text-center">Endorsements will display once posted.</p>`;
+      }
+    }
+
+    // Submit new endorsement to Google Sheets
+    reviewForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = reviewForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Submitting...";
+
+      const payload = {
+        formType: "review",
+        name: document.getElementById('reviewerName').value.trim(),
+        role: document.getElementById('reviewerRole').value.trim(),
+        text: document.getElementById('reviewerText').value.trim()
+      };
+
+      try {
+        await fetch(GOOGLE_SHEET_API_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        renderReview(payload.name, payload.role, payload.text);
+        reviewForm.reset();
+        submitBtn.innerText = "Posted Successfully!";
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerText = "Post Review";
+        }, 2500);
+      } catch (err) {
+        alert("Failed to submit endorsement. Please try again.");
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Post Review";
+      }
+    });
+
+    // 2. CONTACT FORM SCRIPT (Google Sheet Storage + Instant Email + Custom Thank You)
+    const contactForm = document.getElementById('contactForm');
+    const contactSuccessMsg = document.getElementById('contactSuccessMsg');
+    const contactSubmitBtn = document.getElementById('contactSubmitBtn');
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      contactSubmitBtn.disabled = true;
+      contactSubmitBtn.innerText = "Sending Message...";
+
+      const payload = {
+        formType: "contact",
+        name: document.getElementById('contactName').value.trim(),
+        email: document.getElementById('contactEmail').value.trim(),
+        company: document.getElementById('contactCompany').value.trim(),
+        message: document.getElementById('contactMessage').value.trim()
+      };
+
+      try {
+        await fetch(GOOGLE_SHEET_API_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        contactForm.reset();
+        contactForm.classList.add('hidden');
+        contactSuccessMsg.classList.remove('hidden');
+      } catch (err) {
+        alert("There was an issue sending your message. Please try again.");
+        contactSubmitBtn.disabled = false;
+        contactSubmitBtn.innerText = "Send Message";
+      }
+    });
+
+    loadReviews();
   </script>
 </body>
 </html>
