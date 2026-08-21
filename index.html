@@ -28,7 +28,7 @@
   <section id="about" class="max-w-6xl mx-auto px-6 py-16">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
       
-      <!-- Protected Profile Photo -->
+      <!-- Protected Profile Photo (Disabled Right-Click, Drag, and Touch-Save) -->
       <div class="lg:col-span-4 flex justify-center">
         <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full p-2 bg-gradient-to-tr from-blue-600 to-indigo-400 shadow-2xl">
           <div class="w-full h-full rounded-full overflow-hidden bg-white border-4 border-white relative select-none">
@@ -143,79 +143,9 @@
       <p class="mt-2 text-slate-600">Professional credentials, leadership accolades, and organizational excellence awards.</p>
     </div>
 
-    <!-- 5-Card Responsive Certificate Grid with Subfolder Paths -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-      
-      <!-- Certificate Card 1 -->
-      <div onclick="openCertModal('certificates/cert1.pdf', 'Engineering Excellence Award')" class="cursor-pointer group bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-200 flex flex-col justify-between">
-        <div class="relative w-full aspect-[4/3] bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl overflow-hidden flex flex-col items-center justify-center border border-blue-100">
-          <svg class="w-12 h-12 text-blue-600 group-hover:scale-110 transition duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-          </svg>
-          <span class="mt-2 text-[11px] font-bold tracking-wider text-blue-800 bg-white/80 px-2.5 py-0.5 rounded-full border border-blue-200 uppercase">PDF PREVIEW</span>
-        </div>
-        <div class="mt-4 text-center">
-          <h3 class="font-semibold text-sm text-slate-900 group-hover:text-blue-600 transition">Engineering Excellence Award</h3>
-          <p class="text-xs text-slate-500 mt-1">Marvell Semiconductor</p>
-        </div>
-      </div>
-
-      <!-- Certificate Card 2 -->
-      <div onclick="openCertModal('certificates/cert2.pdf', 'Leadership & Operational Impact Award')" class="cursor-pointer group bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-200 flex flex-col justify-between">
-        <div class="relative w-full aspect-[4/3] bg-gradient-to-br from-indigo-50 to-purple-100 rounded-xl overflow-hidden flex flex-col items-center justify-center border border-indigo-100">
-          <svg class="w-12 h-12 text-indigo-600 group-hover:scale-110 transition duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-          </svg>
-          <span class="mt-2 text-[11px] font-bold tracking-wider text-indigo-800 bg-white/80 px-2.5 py-0.5 rounded-full border border-indigo-200 uppercase">PDF PREVIEW</span>
-        </div>
-        <div class="mt-4 text-center">
-          <h3 class="font-semibold text-sm text-slate-900 group-hover:text-indigo-600 transition">Leadership Impact Award</h3>
-          <p class="text-xs text-slate-500 mt-1">Cross-Functional Delivery</p>
-        </div>
-      </div>
-
-      <!-- Certificate Card 3 -->
-      <div onclick="openCertModal('certificates/cert3.pdf', 'Advanced Test Automation Architecture')" class="cursor-pointer group bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-200 flex flex-col justify-between">
-        <div class="relative w-full aspect-[4/3] bg-gradient-to-br from-emerald-50 to-teal-100 rounded-xl overflow-hidden flex flex-col items-center justify-center border border-teal-100">
-          <svg class="w-12 h-12 text-teal-600 group-hover:scale-110 transition duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-          </svg>
-          <span class="mt-2 text-[11px] font-bold tracking-wider text-teal-800 bg-white/80 px-2.5 py-0.5 rounded-full border border-teal-200 uppercase">PDF PREVIEW</span>
-        </div>
-        <div class="mt-4 text-center">
-          <h3 class="font-semibold text-sm text-slate-900 group-hover:text-teal-600 transition">Test Automation Architecture</h3>
-          <p class="text-xs text-slate-500 mt-1">Technical Certification</p>
-        </div>
-      </div>
-
-      <!-- Certificate Card 4 -->
-      <div onclick="openCertModal('certificates/cert4.pdf', 'Outstanding Technical Achievement')" class="cursor-pointer group bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-200 flex flex-col justify-between">
-        <div class="relative w-full aspect-[4/3] bg-gradient-to-br from-amber-50 to-yellow-100 rounded-xl overflow-hidden flex flex-col items-center justify-center border border-amber-100">
-          <svg class="w-12 h-12 text-amber-600 group-hover:scale-110 transition duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-          </svg>
-          <span class="mt-2 text-[11px] font-bold tracking-wider text-amber-800 bg-white/80 px-2.5 py-0.5 rounded-full border border-amber-200 uppercase">PDF PREVIEW</span>
-        </div>
-        <div class="mt-4 text-center">
-          <h3 class="font-semibold text-sm text-slate-900 group-hover:text-amber-600 transition">Technical Achievement Award</h3>
-          <p class="text-xs text-slate-500 mt-1">Product Reliability</p>
-        </div>
-      </div>
-
-      <!-- Certificate Card 5 -->
-      <div onclick="openCertModal('certificates/cert5.pdf', 'Continuous Innovation & Process Excellence')" class="cursor-pointer group bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-200 flex flex-col justify-between">
-        <div class="relative w-full aspect-[4/3] bg-gradient-to-br from-rose-50 to-pink-100 rounded-xl overflow-hidden flex flex-col items-center justify-center border border-rose-100">
-          <svg class="w-12 h-12 text-rose-600 group-hover:scale-110 transition duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-          </svg>
-          <span class="mt-2 text-[11px] font-bold tracking-wider text-rose-800 bg-white/80 px-2.5 py-0.5 rounded-full border border-rose-200 uppercase">PDF PREVIEW</span>
-        </div>
-        <div class="mt-4 text-center">
-          <h3 class="font-semibold text-sm text-slate-900 group-hover:text-rose-600 transition">Innovation &amp; Excellence</h3>
-          <p class="text-xs text-slate-500 mt-1">DevOps Pipeline Streamlining</p>
-        </div>
-      </div>
-
+    <!-- Dynamic Certificates Grid -->
+    <div id="certificationsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+      <div class="col-span-full text-center text-slate-400 text-sm py-8">Loading certificates from repository...</div>
     </div>
   </section>
 
@@ -361,7 +291,7 @@
     </div>
   </section>
 
-  <!-- Google Sheets Integration & PDF Modal Scripts -->
+  <!-- JavaScript: GitHub API Loader + Endorsements + Dedicated Contact Google Sheet -->
   <script>
     // Endorsement Reviews API Endpoint
     const REVIEWS_API_URL = "https://script.google.com/macros/s/AKfycbyCltgVPJO7PqrCHMZrjeSBJOTCJ-Mp2-Zffoy9km9WTb_l4IzqCvl7pWzuynhzkFrD/exec";
@@ -369,7 +299,59 @@
     // Dedicated Contact Form API Endpoint
     const CONTACT_API_URL = "https://script.google.com/macros/s/AKfycbxLBHQYaWtQ88BYXUEnhhkvqLtY2LIExeZ64Hay-g2nUlPDJ6VgvUiKyS-UOyEqdnk/exec";
 
-    // 1. CERTIFICATE MODAL LOGIC
+    // 1. DYNAMIC CERTIFICATE LOADER VIA GITHUB API
+    const GITHUB_USER = "naninice2000";
+    const GITHUB_REPO = "VenkataDuggirala";
+    const FOLDER_PATH = "certificates";
+
+    async function loadCertificates() {
+      const grid = document.getElementById('certificationsGrid');
+      try {
+        const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${FOLDER_PATH}`);
+        const files = await res.json();
+        
+        if (!Array.isArray(files)) {
+          grid.innerHTML = `<p class="col-span-full text-center text-slate-500 text-sm">Create a "certificates" folder in your repository and upload your PDF files there.</p>`;
+          return;
+        }
+
+        const pdfFiles = files.filter(f => f.name.toLowerCase().endsWith('.pdf'));
+        if (pdfFiles.length === 0) {
+          grid.innerHTML = `<p class="col-span-full text-center text-slate-500 text-sm">No PDF certificates found in the /certificates folder.</p>`;
+          return;
+        }
+
+        grid.innerHTML = "";
+        pdfFiles.forEach(file => {
+          // Format filename into a readable title (removes .pdf, dashes, underscores)
+          const rawTitle = file.name.replace(/\.[^/.]+$/, "").replace(/[-_]/g, " ");
+          const title = rawTitle.charAt(0).toUpperCase() + rawTitle.slice(1);
+          const filePath = `${FOLDER_PATH}/${file.name}`;
+
+          const card = document.createElement('div');
+          card.className = "cursor-pointer group bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-200 flex flex-col justify-between";
+          card.onclick = () => openCertModal(filePath, title);
+          card.innerHTML = `
+            <div class="relative w-full aspect-[4/3] bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl overflow-hidden flex flex-col items-center justify-center border border-blue-100">
+              <svg class="w-12 h-12 text-blue-600 group-hover:scale-110 transition duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+              <span class="mt-2 text-[11px] font-bold tracking-wider text-blue-800 bg-white/80 px-2.5 py-0.5 rounded-full border border-blue-200 uppercase">VIEW PDF</span>
+            </div>
+            <div class="mt-4 text-center">
+              <h3 class="font-semibold text-sm text-slate-900 group-hover:text-blue-600 transition capitalize">${escapeHtml(title)}</h3>
+              <p class="text-xs text-slate-500 mt-1">Official Document</p>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      } catch (e) {
+        console.error("Error loading certificates:", e);
+        grid.innerHTML = `<p class="col-span-full text-center text-slate-500 text-sm">Failed to load certificates.</p>`;
+      }
+    }
+
+    // Modal Display Functions
     function openCertModal(pdfPath, title) {
       document.getElementById('modalCertTitle').innerText = title;
       document.getElementById('modalCertDownload').href = pdfPath;
@@ -462,7 +444,7 @@
       }
     });
 
-    // 3. CONTACT FORM SCRIPT
+    // 3. CONTACT FORM SCRIPT (Dedicated Google Sheet Endpoint + Auto-Email + Thank You Alert)
     const contactForm = document.getElementById('contactForm');
     const contactSuccessMsg = document.getElementById('contactSuccessMsg');
     const contactSubmitBtn = document.getElementById('contactSubmitBtn');
@@ -488,6 +470,7 @@
           body: JSON.stringify(payload)
         });
 
+        // Hide form and display custom thank you confirmation
         contactForm.reset();
         contactForm.classList.add('hidden');
         contactSuccessMsg.classList.remove('hidden');
@@ -498,6 +481,8 @@
       }
     });
 
+    // Initialize data loaders
+    loadCertificates();
     loadReviews();
   </script>
 </body>
