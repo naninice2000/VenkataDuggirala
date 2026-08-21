@@ -82,7 +82,7 @@ python3 -m pytest -v
 | Static assets | Request the custom CSS, JavaScript, profile image, publication image, and résumé. | Every asset returns a successful HTTP response from its organized `assets/` path. |
 | Résumé actions | Inspect all résumé download and view links. | All three actions reference `assets/documents/resume.pdf`. |
 | Book preview | Open the publication preview and press Escape. | The modal opens, displays its content, and closes correctly. |
-| Certificates | Return mocked certificate data, open a certificate, and close its modal. | Certificate cards load and the selected PDF title and download path are correct. |
+| Certificates | Return mocked certificate data, verify its first-page preview, open a certificate, and close its modal. | Certificate cards display a PDF preview and the selected PDF title and download path are correct. |
 | Contact form | Complete and submit the form against the mocked API. | The form is hidden and the success message is shown without making a real submission. |
 
 ## Current scope

@@ -80,6 +80,12 @@ def test_book_preview_opens_and_closes(page: Page) -> None:
 def test_certificates_load_and_open_in_modal(page: Page) -> None:
     certificate = page.get_by_role("heading", name="JavaScript Language", exact=True)
     expect(certificate).to_be_visible()
+
+    preview = page.locator('iframe[title="JavaScript Language first-page preview"]')
+    expect(preview).to_have_attribute(
+        "src",
+        "assets/documents/certificates/JavaScript%20Language.pdf#page=1&toolbar=0&navpanes=0&scrollbar=0",
+    )
     certificate.click()
 
     modal = page.locator("#certModal")

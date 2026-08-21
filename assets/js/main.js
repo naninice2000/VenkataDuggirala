@@ -48,11 +48,15 @@ async function loadCertificates() {
       card.className = "cursor-pointer group bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-200 flex flex-col justify-between";
       card.addEventListener('click', () => openCertModal(filePath, title));
       card.innerHTML = `
-        <div class="relative w-full aspect-[4/3] bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl overflow-hidden flex flex-col items-center justify-center border border-blue-100">
-          <svg class="w-12 h-12 text-blue-600 group-hover:scale-110 transition duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-          </svg>
-          <span class="mt-2 text-[11px] font-bold tracking-wider text-blue-800 bg-white/80 px-2.5 py-0.5 rounded-full border border-blue-200 uppercase">VIEW PDF</span>
+        <div class="relative w-full aspect-[4/3] bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
+          <iframe
+            class="w-full h-full pointer-events-none bg-white"
+            src="${encodeURI(filePath)}#page=1&toolbar=0&navpanes=0&scrollbar=0"
+            title="${escapeHtml(title)} first-page preview"
+            loading="lazy"
+            tabindex="-1">
+          </iframe>
+          <span class="absolute bottom-2 left-1/2 -translate-x-1/2 text-[11px] font-bold tracking-wider text-blue-800 bg-white/90 px-2.5 py-0.5 rounded-full border border-blue-200 uppercase shadow-sm">VIEW PDF</span>
         </div>
         <div class="mt-4 text-center">
           <h3 class="font-semibold text-sm text-slate-900 group-hover:text-blue-600 transition capitalize">${escapeHtml(title)}</h3>
