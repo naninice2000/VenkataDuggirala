@@ -175,7 +175,7 @@
         <p class="mt-2 text-slate-600">Recommendations from engineering partners and colleagues.</p>
       </div>
 
-      <!-- Endorsements List Container -->
+      <!-- Endorsements Output List -->
       <div id="reviewsList" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         <div class="text-center col-span-2 text-slate-500 text-sm py-8">
           Loading endorsements...
@@ -252,7 +252,11 @@
 
   <!-- Google Sheets Integration Script -->
   <script>
-    const GOOGLE_SHEET_API_URL = "https://script.google.com/macros/s/AKfycbyCltgVPJO7PqrCHMZrjeSBJOTCJ-Mp2-Zffoy9km9WTb_l4IzqCvl7pWzuynhzkFrD/exec";
+    // Endorsement Reviews API Endpoint
+    const REVIEWS_API_URL = "https://script.google.com/macros/s/AKfycbyCltgVPJO7PqrCHMZrjeSBJOTCJ-Mp2-Zffoy9km9WTb_l4IzqCvl7pWzuynhzkFrD/exec";
+    
+    // Dedicated Contact Form API Endpoint
+    const CONTACT_API_URL = "https://script.google.com/macros/s/AKfycbxLBHQYaWtQ88BYXUEnhhkvqLtY2LIExeZ64Hay-g2nUlPDJ6VgvUiKyS-UOyEqdnk/exec";
 
     // 1. ENDORSEMENTS SCRIPT
     const reviewForm = document.getElementById('reviewForm');
@@ -277,7 +281,7 @@
     // Load existing reviews on page load
     async function loadReviews() {
       try {
-        const response = await fetch(GOOGLE_SHEET_API_URL);
+        const response = await fetch(REVIEWS_API_URL);
         const data = await response.json();
         reviewsList.innerHTML = "";
         
@@ -302,14 +306,13 @@
       submitBtn.innerText = "Submitting...";
 
       const payload = {
-        formType: "review",
         name: document.getElementById('reviewerName').value.trim(),
         role: document.getElementById('reviewerRole').value.trim(),
         text: document.getElementById('reviewerText').value.trim()
       };
 
       try {
-        await fetch(GOOGLE_SHEET_API_URL, {
+        await fetch(REVIEWS_API_URL, {
           method: "POST",
           mode: "no-cors",
           headers: { "Content-Type": "application/json" },
@@ -330,7 +333,7 @@
       }
     });
 
-    // 2. CONTACT FORM SCRIPT (Google Sheet Storage + Instant Email + Custom Thank You)
+    // 2. CONTACT FORM SCRIPT (Dedicated Google Sheet Endpoint + Auto-Email + Thank You Alert)
     const contactForm = document.getElementById('contactForm');
     const contactSuccessMsg = document.getElementById('contactSuccessMsg');
     const contactSubmitBtn = document.getElementById('contactSubmitBtn');
@@ -341,7 +344,6 @@
       contactSubmitBtn.innerText = "Sending Message...";
 
       const payload = {
-        formType: "contact",
         name: document.getElementById('contactName').value.trim(),
         email: document.getElementById('contactEmail').value.trim(),
         company: document.getElementById('contactCompany').value.trim(),
@@ -349,13 +351,14 @@
       };
 
       try {
-        await fetch(GOOGLE_SHEET_API_URL, {
+        await fetch(CONTACT_API_URL, {
           method: "POST",
           mode: "no-cors",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
         });
 
+        // Hide form and display custom thank you confirmation
         contactForm.reset();
         contactForm.classList.add('hidden');
         contactSuccessMsg.classList.remove('hidden');
