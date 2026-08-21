@@ -1,0 +1,10 @@
+/* Site-specific styles that are not provided by Tailwind utilities. */
+
+html {
+  scroll-padding-top: 4rem;
+}
+
+.protected-image-overlay {
+  -webkit-user-select: none;
+  user-select: none;
+}
