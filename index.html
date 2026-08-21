@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Profile & Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <span class="font-bold text-xl text-slate-900 tracking-tight">Portfolio</span>
+      <div class="flex items-center space-x-6 text-sm font-medium text-slate-600">
+        <a href="#about" class="hover:text-blue-600 transition">About</a>
+        <a href="#achievements" class="hover:text-blue-600 transition">Achievements</a>
+        <a href="#resume" class="hover:text-blue-600 transition">Resume</a>
+        <a href="#testimonials" class="hover:text-blue-600 transition">Endorsements</a>
+        <a href="#contact" class="px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition">Contact Me</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section: Protected Profile Photo + Bio + Video Player -->
+  <section id="about" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- Protected Profile Photo (Disabled Right-Click, Drag, and Touch-Save) -->
+      <div class="lg:col-span-4 flex justify-center">
+        <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full p-2 bg-gradient-to-tr from-blue-600 to-indigo-400 shadow-2xl">
+          <div class="w-full h-full rounded-full overflow-hidden bg-white border-4 border-white relative select-none">
+            
+            <!-- Profile Image Element -->
+            <img 
+              src="profile.jpg" 
+              alt="Profile Photo" 
+              class="w-full h-full object-cover pointer-events-none select-none"
+              draggable="false"
+              oncontextmenu="return false;"
+              onerror="this.src='https://placehold.co/400x400/e2e8f0/475569?text=Your+Photo'" 
+            />
+
+            <!-- Invisible Intercept Layer -->
+            <div 
+              class="absolute inset-0 z-10 bg-transparent" 
+              oncontextmenu="return false;" 
+              draggable="false">
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Headline & Call-to-Action Buttons -->
+      <div class="lg:col-span-8 text-center lg:text-left space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-200 text-blue-700 rounded-full text-xs font-semibold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+          Open to Opportunities
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
+          Engineering Leader &amp; Strategic Builder
+        </h1>
+        <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
+          Delivering scalable architecture, high-impact systems, and engineering excellence with over two decades of technical leadership experience.
+        </p>
+        <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4">
+          <a href="#contact" class="px-6 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 shadow-sm transition">
+            Hire / Connect
+          </a>
+          <a href="#achievements" class="px-6 py-3 bg-white border border-slate-300 font-medium rounded-xl hover:bg-slate-100 transition text-slate-700">
+            View Achievements
+          </a>
+          <a href="resume.pdf" download class="inline-flex items-center gap-2 px-6 py-3 bg-slate-100 border border-slate-200 font-medium rounded-xl hover:bg-slate-200 transition text-slate-800">
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            Resume (PDF)
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Video Introduction Container -->
+    <div class="mt-16 max-w-4xl mx-auto">
+      <div class="bg-slate-900 rounded-2xl overflow-hidden shadow-2xl aspect-video relative">
+        <video class="w-full h-full object-cover" controls poster="https://placehold.co/1280x720/0f172a/ffffff?text=Click+to+Play+Video+Introduction">
+          <source src="your-intro-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Achievements & Metrics -->
+  <section id="achievements" class="bg-white py-16 border-y border-slate-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold text-slate-900">Key Achievements</h2>
+        <p class="mt-2 text-slate-600">Quantifiable impact across technical delivery and organizational scale.</p>
+      </div>
+
+      <!-- Metrics Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 text-center">
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+          <div class="text-3xl sm:text-4xl font-extrabold text-blue-600">20+</div>
+          <div class="mt-2 text-xs sm:text-sm font-semibold text-slate-700">Years Experience</div>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+          <div class="text-3xl sm:text-4xl font-extrabold text-blue-600">99.9%</div>
+          <div class="mt-2 text-xs sm:text-sm font-semibold text-slate-700">Automation Reliability</div>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+          <div class="text-3xl sm:text-4xl font-extrabold text-blue-600">10x</div>
+          <div class="mt-2 text-xs sm:text-sm font-semibold text-slate-700">Pipeline Scalability</div>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+          <div class="text-3xl sm:text-4xl font-extrabold text-blue-600">60%</div>
+          <div class="mt-2 text-xs sm:text-sm font-semibold text-slate-700">Cycle Reduction</div>
+        </div>
+      </div>
+
+      <!-- Detail Highlight Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-6 rounded-2xl border border-slate-200 bg-white hover:shadow-md transition">
+          <h3 class="text-xl font-bold text-slate-900">Scalable Quality Engineering &amp; Automation</h3>
+          <p class="mt-2 text-slate-600 text-sm leading-relaxed">
+            Architected enterprise test automation frameworks that accelerated continuous deployment across distributed cross-functional engineering teams.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-200 bg-white hover:shadow-md transition">
+          <h3 class="text-xl font-bold text-slate-900">Operations &amp; Strategic Leadership</h3>
+          <p class="mt-2 text-slate-600 text-sm leading-relaxed">
+            Directed technical strategy and operational roadmaps, driving infrastructure stability, risk mitigation, and executive business alignment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Download Callout Section -->
+  <section id="resume" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="space-y-2 text-center md:text-left">
+        <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold uppercase tracking-wider">
+          Complete Profile
+        </span>
+        <h2 class="text-3xl font-bold text-white">Download the Full Resume</h2>
+        <p class="text-slate-300 text-sm max-w-xl">
+          Get a detailed PDF covering full career chronology, architectural proficiencies, and executive credentials.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center gap-4 flex-shrink-0">
+        <a href="resume.pdf" download class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-blue-600 text-white font-semibold text-sm rounded-xl hover:bg-blue-500 shadow-md transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+          Download PDF
+        </a>
+        <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-800 border border-slate-700 text-slate-200 font-semibold text-sm rounded-xl hover:bg-slate-700 transition">
+          View in Browser
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Colleague Endorsements Section -->
+  <section id="testimonials" class="bg-white py-16 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold text-slate-900">Colleague Endorsements</h2>
+        <p class="mt-2 text-slate-600">Recommendations from engineering partners and colleagues.</p>
+      </div>
+
+      <!-- Endorsements Output List -->
+      <div id="reviewsList" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <p class="text-slate-700 italic">"An exceptional engineering leader who combines deep technical acumen with calm, decisive execution."</p>
+          <div class="mt-4 font-semibold text-slate-900 text-sm">— Engineering Director <span class="text-xs font-normal text-slate-500">(Collaborator)</span></div>
+        </div>
+      </div>
+
+      <!-- Review Input Form -->
+      <div class="max-w-xl mx-auto bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm">
+        <h3 class="text-xl font-bold text-slate-900 mb-1">Leave an Endorsement</h3>
+        <p class="text-xs text-slate-500 mb-6">Colleagues and teammates can add their review below.</p>
+        
+        <form id="reviewForm" class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Your Name &amp; Title</label>
+            <input type="text" id="reviewerName" required placeholder="e.g., Alex Smith, Senior Director" class="w-full px-4 py-2 border border-slate-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-blue-500 outline-none" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Relationship</label>
+            <input type="text" id="reviewerRole" required placeholder="e.g., Managed directly / Worked on same team" class="w-full px-4 py-2 border border-slate-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-blue-500 outline-none" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Endorsement</label>
+            <textarea id="reviewerText" rows="3" required placeholder="Share your experience working together..." class="w-full px-4 py-2 border border-slate-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+          </div>
+          <button type="submit" class="w-full py-2.5 bg-slate-900 text-white font-medium text-sm rounded-lg hover:bg-slate-800 transition">
+            Post Review
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hiring Manager Contact Section -->
+  <section id="contact" class="bg-slate-900 text-white py-16">
+    <div class="max-w-xl mx-auto px-6">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold">Get in Touch</h2>
+        <p class="mt-2 text-slate-400 text-sm">Hiring managers and collaborators can send a direct message below.</p>
+      </div>
+
+      <!-- Formspree Endpoint -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Full Name</label>
+          <input type="text" name="name" required class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:border-blue-500 outline-none" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Email Address</label>
+          <input type="email" name="email" required class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:border-blue-500 outline-none" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Company / Organization</label>
+          <input type="text" name="company" class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:border-blue-500 outline-none" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Message / Opportunity Details</label>
+          <textarea name="message" rows="4" required class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-lg text-sm text-white focus:border-blue-500 outline-none"></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-500 transition">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Client-Side Storage Script for Dynamic Reviews -->
+  <script>
+    const reviewForm = document.getElementById('reviewForm');
+    const reviewsList = document.getElementById('reviewsList');
+
+    const savedReviews = JSON.parse(localStorage.getItem('peer_reviews') || '[]');
+    savedReviews.forEach(r => appendReviewToDOM(r.name, r.role, r.text));
+
+    reviewForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('reviewerName').value.trim();
+      const role = document.getElementById('reviewerRole').value.trim();
+      const text = document.getElementById('reviewerText').value.trim();
+
+      if (name && text) {
+        appendReviewToDOM(name, role, text);
+        savedReviews.push({ name, role, text });
+        localStorage.setItem('peer_reviews', JSON.stringify(savedReviews));
+        reviewForm.reset();
+      }
+    });
+
+    function appendReviewToDOM(name, role, text) {
+      const card = document.createElement('div');
+      card.className = 'bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm';
+      card.innerHTML = `
+        <p class="text-slate-700 italic">"${text}"</p>
+        <div class="mt-4 font-semibold text-slate-900 text-sm">— ${name} <span class="text-xs font-normal text-slate-500">(${role})</span></div>
+      `;
+      reviewsList.prepend(card);
+    }
+  </script>
+</body>
+</html>
