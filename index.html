@@ -16,6 +16,7 @@
       <div class="flex items-center space-x-6 text-sm font-medium text-slate-600">
         <a href="#about" class="hover:text-blue-600 transition">About</a>
         <a href="#achievements" class="hover:text-blue-600 transition">Achievements</a>
+        <a href="#publications" class="hover:text-blue-600 transition">Publications</a>
         <a href="#certifications" class="hover:text-blue-600 transition">Certifications</a>
         <a href="#resume" class="hover:text-blue-600 transition">Resume</a>
         <a href="#testimonials" class="hover:text-blue-600 transition">Endorsements</a>
@@ -28,7 +29,7 @@
   <section id="about" class="max-w-6xl mx-auto px-6 py-16">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
       
-      <!-- Protected Profile Photo (Disabled Right-Click, Drag, and Touch-Save) -->
+      <!-- Protected Profile Photo -->
       <div class="lg:col-span-4 flex justify-center">
         <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full p-2 bg-gradient-to-tr from-blue-600 to-indigo-400 shadow-2xl">
           <div class="w-full h-full rounded-full overflow-hidden bg-white border-4 border-white relative select-none">
@@ -65,8 +66,8 @@
           <a href="#contact" class="px-6 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 shadow-sm transition">
             Hire / Connect
           </a>
-          <a href="#achievements" class="px-6 py-3 bg-white border border-slate-300 font-medium rounded-xl hover:bg-slate-100 transition text-slate-700">
-            View Achievements
+          <a href="#publications" class="px-6 py-3 bg-indigo-50 border border-indigo-200 font-medium rounded-xl hover:bg-indigo-100 transition text-indigo-700">
+            View Books &amp; Articles
           </a>
           <a href="resume.pdf" download class="inline-flex items-center gap-2 px-6 py-3 bg-slate-100 border border-slate-200 font-medium rounded-xl hover:bg-slate-200 transition text-slate-800">
             <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,7 +99,6 @@
         <p class="mt-2 text-slate-600">Quantifiable impact across technical delivery and organizational scale.</p>
       </div>
 
-      <!-- Metrics Grid -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 text-center">
         <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
           <div class="text-3xl sm:text-4xl font-extrabold text-blue-600">20+</div>
@@ -118,7 +118,6 @@
         </div>
       </div>
 
-      <!-- Detail Highlight Cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="p-6 rounded-2xl border border-slate-200 bg-white hover:shadow-md transition">
           <h3 class="text-xl font-bold text-slate-900">Scalable Quality Engineering &amp; Automation</h3>
@@ -136,8 +135,176 @@
     </div>
   </section>
 
+  <!-- Writing & Publications Section -->
+  <section id="publications" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-3xl font-bold text-slate-900">Writing &amp; Publications</h2>
+      <p class="mt-2 text-slate-600">Authored books, technical articles, and commentary on leadership and strategic planning.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Amazon KDP Book Showcase Card (8 cols) -->
+      <div class="lg:col-span-8 bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm">
+        <div class="flex flex-col sm:flex-row gap-6 items-start">
+          
+          <!-- Book Cover -->
+          <div class="w-full sm:w-48 flex-shrink-0">
+            <div class="aspect-[2/3] rounded-xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 relative group">
+              <img 
+                src="book-cover.jpg" 
+                alt="Estate Planning for Families in the U.S." 
+                class="w-full h-full object-cover"
+                onerror="this.src='https://placehold.co/400x600/1e293b/ffffff?text=Book+Cover'"
+              />
+              <div class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition duration-200 flex items-center justify-center">
+                <button onclick="openBookPreviewModal()" class="px-3.5 py-2 bg-white text-slate-900 text-xs font-bold rounded-lg shadow hover:bg-slate-100 transition">
+                  Interactive Preview
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Book Metadata & Direct Actions -->
+          <div class="space-y-3 flex-1">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-amber-50 border border-amber-200 text-amber-800 rounded-full text-xs font-semibold uppercase tracking-wide">
+              <span>★</span> Amazon KDP Published
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 leading-snug">Estate Planning for Families in the U.S.</h3>
+            <p class="text-xs font-medium text-slate-500">By Venkata Ramana Duggirala</p>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              A practical, structured guide designed to help modern families navigate estate planning, living trusts, asset protection, and generational wealth preservation.
+            </p>
+            
+            <div class="pt-2 flex flex-wrap gap-3">
+              <a href="https://www.amazon.com/dp/YOUR_ASIN_HERE" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-semibold text-sm rounded-xl shadow-sm transition">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M13.7 15.5c-3.1 1.7-6.9 2.6-10.8 2.6-1.5 0-2.9-.1-4.4-.4-.3 0-.6.2-.6.5v1.2c0 .3.2.5.5.6 1.5.3 3 .5 4.5.5 4.4 0 8.7-1 12.3-3 .4-.2.6-.7.3-1.1-.2-.4-.7-.6-1.1-.3l-.8.1zm6.9-3.2c-.4-.5-1.1-.6-1.6-.2-.5.4-.6 1.1-.2 1.6.8 1.1 1.3 2.5 1.3 4 0 1.6-.6 3.1-1.6 4.3-.4.5-.3 1.2.2 1.6.5.4 1.2.3 1.6-.2 1.3-1.6 2.1-3.6 2.1-5.7 0-2-1-3.9-1.8-5.4z"/>
+                </svg>
+                View on Amazon Store
+              </a>
+              <button onclick="openBookPreviewModal()" class="inline-flex items-center gap-1.5 px-4 py-2.5 bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 font-semibold text-sm rounded-xl transition">
+                <span>📖</span> Look Inside (Preview)
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Reader Reviews Subsection -->
+        <div class="mt-8 pt-6 border-t border-slate-100">
+          <h4 class="font-bold text-xs uppercase tracking-wider text-slate-400 mb-4">Reader Feedback &amp; Editorial Reviews</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+              <div class="flex text-amber-500 mb-1">★★★★★</div>
+              <p class="text-slate-700 italic">"Clear, actionable, and demystifies trusts and estate strategies without overwhelming legal jargon."</p>
+              <div class="mt-2 font-semibold text-slate-900">— Verified Reader</div>
+            </div>
+            <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+              <div class="flex text-amber-500 mb-1">★★★★★</div>
+              <p class="text-slate-700 italic">"An indispensable handbook for families aiming to protect and structure their assets properly."</p>
+              <div class="mt-2 font-semibold text-slate-900">— Engineering Colleague</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Medium & Substack Writing Channels (4 cols) -->
+      <div class="lg:col-span-4 space-y-4">
+        
+        <!-- Medium Card -->
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center font-serif font-black text-xl">
+              M
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-base">Medium Articles</h4>
+              <p class="text-xs text-slate-500">Quality, DevOps &amp; Engineering Strategy</p>
+            </div>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Deep-dives on test automation architecture, operational scalability, and enterprise engineering workflows.
+          </p>
+          <a href="https://medium.com/@YOUR_MEDIUM_USERNAME" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl text-xs font-semibold text-slate-800 transition">
+            <span>Read on Medium</span>
+            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Substack Card -->
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-orange-600 text-white flex items-center justify-center font-bold text-lg">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-base">Substack Newsletter</h4>
+              <p class="text-xs text-slate-500">Wealth &amp; Strategic Insights</p>
+            </div>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            Regular essays on disciplined investing frameworks, estate planning fundamentals, and leadership mindsets.
+          </p>
+          <a href="https://YOUR_SUBSTACK_NAME.substack.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between w-full px-4 py-2.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl text-xs font-semibold text-slate-800 transition">
+            <span>Subscribe on Substack</span>
+            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Book Preview Modal (Coming Soon State) -->
+  <div id="bookPreviewModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-xl rounded-3xl flex flex-col shadow-2xl overflow-hidden border border-slate-200">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50">
+        <h3 class="font-bold text-slate-900 text-base sm:text-lg">Interactive Book Preview</h3>
+        <button onclick="closeBookPreviewModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-200 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Coming Soon Content Body -->
+      <div class="p-8 sm:p-10 text-center space-y-4">
+        <div class="w-16 h-16 bg-blue-50 border border-blue-200 text-blue-600 rounded-2xl mx-auto flex items-center justify-center text-2xl shadow-sm">
+          📖
+        </div>
+        <div class="inline-block px-3 py-1 bg-amber-50 border border-amber-200 text-amber-800 rounded-full text-xs font-semibold uppercase tracking-wider">
+          Feature In Progress
+        </div>
+        <h4 class="text-2xl font-bold text-slate-900">Interactive Sample Coming Soon</h4>
+        <p class="text-slate-600 text-sm leading-relaxed max-w-md mx-auto">
+          An interactive excerpt and digital sample chapters from <em>"Estate Planning for Families in the U.S."</em> are being prepared for direct online reading.
+        </p>
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href="https://www.amazon.com/dp/YOUR_ASIN_HERE" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-semibold text-sm rounded-xl shadow-sm transition">
+            View on Amazon KDP
+          </a>
+          <button onclick="closeBookPreviewModal()" class="w-full sm:w-auto px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-sm rounded-xl transition">
+            Close
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- Certifications & Work Recognitions Section -->
-  <section id="certifications" class="max-w-6xl mx-auto px-6 py-16">
+  <section id="certifications" class="max-w-6xl mx-auto px-6 py-16 bg-white border-y border-slate-200">
     <div class="text-center max-w-2xl mx-auto mb-12">
       <h2 class="text-3xl font-bold text-slate-900">Certifications &amp; Work Recognitions</h2>
       <p class="mt-2 text-slate-600">Professional credentials, leadership accolades, and organizational excellence awards.</p>
@@ -152,8 +319,6 @@
   <!-- PDF Certificate Interactive Modal -->
   <div id="certModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
     <div class="bg-white w-full max-w-4xl h-[88vh] rounded-2xl flex flex-col shadow-2xl overflow-hidden border border-slate-200">
-      
-      <!-- Modal Header -->
       <div class="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50">
         <div>
           <h3 id="modalCertTitle" class="font-bold text-slate-900 text-base sm:text-lg">Certificate Viewer</h3>
@@ -173,8 +338,6 @@
           </button>
         </div>
       </div>
-
-      <!-- Modal PDF Frame Container -->
       <div class="flex-1 bg-slate-100 p-2">
         <iframe id="modalPdfFrame" src="" class="w-full h-full rounded-lg border border-slate-200 bg-white" title="Certificate Document"></iframe>
       </div>
@@ -291,7 +454,7 @@
     </div>
   </section>
 
-  <!-- JavaScript: GitHub API Loader + Endorsements + Dedicated Contact Google Sheet -->
+  <!-- JavaScript Section -->
   <script>
     // Endorsement Reviews API Endpoint
     const REVIEWS_API_URL = "https://script.google.com/macros/s/AKfycbyCltgVPJO7PqrCHMZrjeSBJOTCJ-Mp2-Zffoy9km9WTb_l4IzqCvl7pWzuynhzkFrD/exec";
@@ -299,7 +462,18 @@
     // Dedicated Contact Form API Endpoint
     const CONTACT_API_URL = "https://script.google.com/macros/s/AKfycbxLBHQYaWtQ88BYXUEnhhkvqLtY2LIExeZ64Hay-g2nUlPDJ6VgvUiKyS-UOyEqdnk/exec";
 
-    // 1. DYNAMIC CERTIFICATE LOADER VIA GITHUB API
+    // 1. BOOK PREVIEW MODAL (COMING SOON)
+    function openBookPreviewModal() {
+      document.getElementById('bookPreviewModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBookPreviewModal() {
+      document.getElementById('bookPreviewModal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // 2. DYNAMIC CERTIFICATE LOADER VIA GITHUB API
     const GITHUB_USER = "naninice2000";
     const GITHUB_REPO = "VenkataDuggirala";
     const FOLDER_PATH = "certificates";
@@ -311,7 +485,7 @@
         const files = await res.json();
         
         if (!Array.isArray(files)) {
-          grid.innerHTML = `<p class="col-span-full text-center text-slate-500 text-sm">Create a "certificates" folder in your repository and upload your PDF files there.</p>`;
+          grid.innerHTML = `<p class="col-span-full text-center text-slate-500 text-sm">Upload PDF files to the /certificates folder in your repo.</p>`;
           return;
         }
 
@@ -323,7 +497,6 @@
 
         grid.innerHTML = "";
         pdfFiles.forEach(file => {
-          // Format filename into a readable title (removes .pdf, dashes, underscores)
           const rawTitle = file.name.replace(/\.[^/.]+$/, "").replace(/[-_]/g, " ");
           const title = rawTitle.charAt(0).toUpperCase() + rawTitle.slice(1);
           const filePath = `${FOLDER_PATH}/${file.name}`;
@@ -351,7 +524,6 @@
       }
     }
 
-    // Modal Display Functions
     function openCertModal(pdfPath, title) {
       document.getElementById('modalCertTitle').innerText = title;
       document.getElementById('modalCertDownload').href = pdfPath;
@@ -367,10 +539,13 @@
     }
 
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeCertModal();
+      if (e.key === 'Escape') {
+        closeCertModal();
+        closeBookPreviewModal();
+      }
     });
 
-    // 2. ENDORSEMENTS SCRIPT
+    // 3. ENDORSEMENTS SCRIPT
     const reviewForm = document.getElementById('reviewForm');
     const reviewsList = document.getElementById('reviewsList');
 
@@ -444,7 +619,7 @@
       }
     });
 
-    // 3. CONTACT FORM SCRIPT (Dedicated Google Sheet Endpoint + Auto-Email + Thank You Alert)
+    // 4. CONTACT FORM SCRIPT
     const contactForm = document.getElementById('contactForm');
     const contactSuccessMsg = document.getElementById('contactSuccessMsg');
     const contactSubmitBtn = document.getElementById('contactSubmitBtn');
@@ -470,7 +645,6 @@
           body: JSON.stringify(payload)
         });
 
-        // Hide form and display custom thank you confirmation
         contactForm.reset();
         contactForm.classList.add('hidden');
         contactSuccessMsg.classList.remove('hidden');
@@ -481,7 +655,7 @@
       }
     });
 
-    // Initialize data loaders
+    // Run loaders
     loadCertificates();
     loadReviews();
   </script>
