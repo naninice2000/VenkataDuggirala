@@ -4,6 +4,35 @@ const REVIEWS_API_URL = "https://script.google.com/macros/s/AKfycbyCltgVPJO7PqrC
 // Dedicated Contact Form API Endpoint
 const CONTACT_API_URL = "https://script.google.com/macros/s/AKfycbxLBHQYaWtQ88BYXUEnhhkvqLtY2LIExeZ64Hay-g2nUlPDJ6VgvUiKyS-UOyEqdnk/exec";
 
+// Mobile navigation
+const mobileMenuButton = document.getElementById('mobileMenuButton');
+const primaryNavigation = document.getElementById('primaryNavigation');
+
+function closeMobileMenu() {
+  primaryNavigation.classList.add('hidden');
+  mobileMenuButton.setAttribute('aria-expanded', 'false');
+  mobileMenuButton.setAttribute('aria-label', 'Open navigation menu');
+  mobileMenuButton.querySelector('.menu-open-icon').classList.remove('hidden');
+  mobileMenuButton.querySelector('.menu-close-icon').classList.add('hidden');
+}
+
+mobileMenuButton.addEventListener('click', () => {
+  const isOpening = primaryNavigation.classList.contains('hidden');
+  primaryNavigation.classList.toggle('hidden');
+  mobileMenuButton.setAttribute('aria-expanded', String(isOpening));
+  mobileMenuButton.setAttribute('aria-label', isOpening ? 'Close navigation menu' : 'Open navigation menu');
+  mobileMenuButton.querySelector('.menu-open-icon').classList.toggle('hidden', isOpening);
+  mobileMenuButton.querySelector('.menu-close-icon').classList.toggle('hidden', !isOpening);
+});
+
+primaryNavigation.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', closeMobileMenu);
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 768) closeMobileMenu();
+});
+
 // 1. BOOK PREVIEW MODAL LOGIC
 function openBookPreviewModal() {
   document.getElementById('bookPreviewModal').classList.remove('hidden');

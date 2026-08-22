@@ -46,6 +46,27 @@ def test_navigation_matches_section_order(page: Page) -> None:
     ]
 
 
+def test_mobile_navigation_and_layout_do_not_overflow(page: Page) -> None:
+    page.set_viewport_size({"width": 375, "height": 812})
+
+    menu_button = page.locator("#mobileMenuButton")
+    navigation = page.locator("#primaryNavigation")
+    expect(menu_button).to_be_visible()
+    expect(navigation).to_be_hidden()
+
+    menu_button.click()
+    expect(navigation).to_be_visible()
+    expect(menu_button).to_have_attribute("aria-expanded", "true")
+
+    navigation.get_by_role("link", name="Impact", exact=True).click()
+    expect(navigation).to_be_hidden()
+    expect(menu_button).to_have_attribute("aria-expanded", "false")
+
+    document_width = page.evaluate("document.documentElement.scrollWidth")
+    viewport_width = page.evaluate("document.documentElement.clientWidth")
+    assert document_width == viewport_width
+
+
 def test_local_assets_are_available(page: Page, base_url: str) -> None:
     asset_paths = [
         "assets/css/styles.css",
